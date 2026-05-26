@@ -9,16 +9,23 @@ interface Props {
 
 const { icon, label, cat, active = false, count } = Astro.props;
 ---
-
 <button
   data-cat={cat}
-  class:list={[
-    'filter-tag cursor-pointer whitespace-nowrap rounded-full border px-4 py-2 text-sm transition-all',
+  class={[
+    'inline-flex items-center gap-1.5 whitespace-nowrap rounded-full px-3.5 py-1.5 text-[13px] font-medium border transition-all duration-200 cursor-pointer',
     active
-      ? 'border-accent bg-accent text-white'
-      : 'border-border bg-surface text-text-secondary hover:bg-surface-hover hover:text-text',
+      ? 'border-slate-300 bg-slate-50/80 text-accent-dim shadow-sm shadow-slate-500/8'
+      : 'border-border bg-white/50 text-text-secondary hover:bg-black/[0.02] hover:border-black/10',
   ]}
 >
-  {icon} {label}
-  {count != null && <span class="ml-1 opacity-70">({count})</span>}
+  <span class="text-[11px]">{icon}</span>
+  <span>{label}</span>
+  {count !== undefined && (
+    <span class={[
+      'ml-0.5 rounded-md px-1.5 py-0.5 text-[10px] font-medium tabular-nums',
+      active ? 'bg-white/60 text-text-muted' : 'bg-black/[0.03] text-text-muted',
+    ]}>
+      {count}
+    </span>
+  )}
 </button>

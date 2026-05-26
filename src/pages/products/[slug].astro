@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { getCollection, render } from 'astro:content';
+import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
   const products = await getCollection('products');
@@ -11,136 +11,133 @@ export async function getStaticPaths() {
 }
 
 const { product } = Astro.props;
-const { Content } = await render(product);
+const { name, vendor, category, tags = [], pros = [], cons = [], pricing, website, updatedAt } = product.data;
 
-const CATEGORY_LABELS: Record<string, { icon: string; label: string }> = {
-  chat: { icon: '💬', label: '对话大模型' },
-  ide: { icon: '💻', label: '代码IDE' },
-  ui: { icon: '🎨', label: 'UI前端' },
-  agent: { icon: '⚙️', label: 'Agent编排' },
-  media: { icon: '🖼️', label: '图片视频' },
-  search: { icon: '🔍', label: '搜索知识' },
-  data: { icon: '📊', label: '数据分析' },
-  audio: { icon: '🎵', label: '音频音乐' },
+const CATEGORY_LABELS: Record<string, string> = {
+  chat: '对话大模型',
+  ide: '代码IDE',
+  ui: 'UI前端',
+  agent: 'Agent编排',
+  media: '图片视频',
+  search: '搜索知识',
+  data: '数据分析',
+  audio: '音频音乐',
 };
 
-const catInfo = CATEGORY_LABELS[product.data.category] || { icon: '📦', label: product.data.category };
-
-const pricingMap: Record<string, { label: string; color: string }> = {
-  free: { label: '免费', color: 'bg-green-900/40 text-green-400' },
-  freemium: { label: '免费增值', color: 'bg-blue-900/40 text-blue-400' },
-  paid: { label: '付费', color: 'bg-orange-900/40 text-orange-400' },
-  'open-source': { label: '开源', color: 'bg-purple-900/40 text-purple-400' },
+const PRICING_MAP: Record<string, string> = {
+  free: '免费',
+  freemium: '免费增值',
+  paid: '付费',
+  enterprise: '企业版',
 };
 
-// Get related products (same category, different product)
+// Related products in same category
 const allProducts = await getCollection('products');
 const related = allProducts
-  .filter((p) => p.data.category === product.data.category && p.id !== product.id)
-  .sort(() => 0.5 - Math.random())
+  .filter((p) => p.data.category === category && p.id !== product.id)
   .slice(0, 3);
 ---
 
-<Layout title={`${product.data.name} — AI Toolbox`} description={`${product.data.name} by ${product.data.vendor}: ${product.data.pros[0]}`}>
-  <article class="mx-auto max-w-4xl px-4 py-12 sm:px-6">
+<Layout title={`${name} — AI Toolbox`}>
+  <div class="mx-auto max-w-6xl px-5 py-10 sm:py-14">
     <!-- Breadcrumb -->
-    <nav class="mb-8 flex items-center gap-2 text-sm text-text-secondary">
-      <a href="/" class="transition hover:text-text">首页</a>
-      <span>/</span>
-      <a href="/" class="transition hover:text-text">{catInfo.icon} {catInfo.label}</a>
-      <span>/</span>
-      <span class="text-text">{product.data.name}</span>
+    <nav class="mb-8 flex items-center gap-2 text-[12px] text-text-muted">
+      <a href="/" class="transition-colors hover:text-text-secondary">首页</a>
+      <svg class="h-3 w-3" viewBox="0 0 12 12" fill="none"><path d="M4 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <a href="/categories" class="transition-colors hover:text-text-secondary">分类</a>
+      <svg class="h-3 w-3" viewBox="0 0 12 12" fill="none"><path d="M4 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <a href={`/categories#${category}`} class="transition-colors hover:text-text-secondary">{CATEGORY_LABELS[category] || category}</a>
+      <svg class="h-3 w-3" viewBox="0 0 12 12" fill="none"><path d="M4 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="text-text-secondary font-medium">{name}</span>
     </nav>
 
-    <!-- Header -->
-    <header class="mb-10">
-      <div class="flex flex-wrap items-center gap-3 mb-4">
-        <h1 class="text-3xl font-extrabold sm:text-4xl">{product.data.name}</h1>
-        <span class="rounded-full bg-accent/10 px-4 py-1 text-sm text-accent-light">
-          {product.data.vendor}
-        </span>
-      </div>
+    <!-- Header Card -->
+    <div class="glass-card rounded-2xl p-6 sm:p-8 mb-8">
+      <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+        <div class="flex-1 min-w-0">
+          <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-text">{name}</h1>
+          <p class="mt-1 text-sm text-text-muted">{vendor}</p>
 
-      <div class="flex flex-wrap gap-2">
-        <span class="rounded-full bg-surface-hover px-3 py-1 text-xs text-text-secondary">
-          {catInfo.icon} {catInfo.label}
-        </span>
-        {pricingMap[product.data.pricing] && (
-          <span class={`rounded-full px-3 py-1 text-xs ${pricingMap[product.data.pricing].color}`}>
-            {pricingMap[product.data.pricing].label}
-          </span>
-        )}
-        {product.data.website && (
+          <!-- Tags row -->
+          <div class="mt-4 flex flex-wrap items-center gap-2">
+            <span class="inline-flex items-center rounded-lg px-2.5 py-1 text-[11px] font-medium border border-border bg-white/60 text-text-secondary">
+              {CATEGORY_LABELS[category] || category}
+            </span>
+            <span class="inline-flex items-center rounded-lg px-2.5 py-1 text-[11px] font-medium border border-border bg-slate-50/80 text-accent-dim">
+              {PRICING_MAP[pricing] || pricing}
+            </span>
+            {tags.slice(0, 5).map((tag: string) => (
+              <span class="inline-flex items-center rounded-lg px-2.5 py-1 text-[11px] bg-slate-50/50 text-text-muted">{tag}</span>
+            ))}
+          </div>
+        </div>
+
+        {/* Visit button */}
+        {website && (
           <a
-            href={product.data.website}
+            href={website}
             target="_blank"
-            class="rounded-full bg-accent/20 px-3 py-1 text-xs text-accent-light transition hover:bg-accent/30"
+            rel="noopener noreferrer"
+            class="shrink-0 inline-flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-slate-700 to-slate-800 text-white px-5 py-2.5 text-[13px] font-medium transition-all hover:from-slate-800 hover:to-slate-900 hover:shadow-lg hover:shadow-slate-500/20"
           >
-            🔗 官网
+            访问官网
+            <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4m0 0H6m6 0v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         )}
       </div>
-    </header>
+    </div>
 
-    <!-- Pros & Cons -->
-    <div class="grid gap-6 sm:grid-cols-2 mb-10">
-      <div class="rounded-2xl border border-green/20 bg-green/5 p-6">
-        <h2 class="mb-4 flex items-center gap-2 text-lg font-bold text-green">✅ 擅长</h2>
+    <!-- Two-column: Pros & Cons -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+      <!-- Strengths -->
+      <div class="glass-card rounded-xl p-6">
+        <div class="mb-4 flex items-center gap-2">
+          <div class="h-1.5 w-1.5 rounded-full bg-emerald-500"></div>
+          <h2 class="text-sm font-semibold text-text uppercase tracking-wider">优势</h2>
+          <span class="ml-auto text-[11px] tabular-nums text-text-muted">{pros.length} 项</span>
+        </div>
         <ul class="space-y-3">
-          {product.data.pros.map((p: string) => (
-            <li class="relative pl-5 text-sm leading-relaxed text-text-secondary">
-              <span class="absolute left-0 top-[7px] h-2 w-2 rounded-full bg-green" />
-              {p}
+          {pros.map((pro: string) => (
+            <li class="flex items-start gap-2.5 text-[13px] text-text-secondary leading-relaxed">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" viewBox="0 0 16 16" fill="none"><path d="M13 4.5L6 11.5l-3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>{pro}</span>
             </li>
           ))}
         </ul>
       </div>
-      <div class="rounded-2xl border border-red/20 bg-red/5 p-6">
-        <h2 class="mb-4 flex items-center gap-2 text-lg font-bold text-red">⚠️ 不擅长</h2>
+
+      <!-- Limitations -->
+      <div class="glass-card rounded-xl p-6">
+        <div class="mb-4 flex items-center gap-2">
+          <div class="h-1.5 w-1.5 rounded-full bg-amber-400"></div>
+          <h2 class="text-sm font-semibold text-text uppercase tracking-wider">局限</h2>
+          <span class="ml-auto text-[11px] tabular-nums text-text-muted">{cons.length} 项</span>
+        </div>
         <ul class="space-y-3">
-          {product.data.cons.map((c: string) => (
-            <li class="relative pl-5 text-sm leading-relaxed text-text-secondary">
-              <span class="absolute left-0 top-[7px] h-2 w-2 rounded-full bg-red" />
-              {c}
+          {cons.map((con: string) => (
+            <li class="flex items-start gap-2.5 text-[13px] text-text-secondary leading-relaxed">
+              <svg class="mt-0.5 h-4 w-4 shrink-0 text-amber-400" viewBox="0 0 16 16" fill="none"><path d="M4 12l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 8l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>{con}</span>
             </li>
           ))}
         </ul>
       </div>
     </div>
 
-    <!-- Content body (from MDX) -->
-    <div class="prose prose-invert mb-10 max-w-none">
-      <Content />
-    </div>
-
-    <!-- Tags -->
-    {product.data.tags.length > 0 && (
-      <div class="mb-10 flex flex-wrap gap-2">
-        {product.data.tags.map((t: string) => (
-          <span class="rounded-full border border-border bg-surface px-3 py-1 text-xs text-text-secondary">
-            #{t}
-          </span>
-        ))}
-      </div>
-    )}
-
-    <!-- Related -->
+    {/* Related Products */}
     {related.length > 0 && (
-      <section class="border-t border-border pt-10">
-        <h2 class="mb-6 text-xl font-bold">同分类产品</h2>
-        <div class="grid gap-4 sm:grid-cols-3">
+      <section>
+        <h2 class="mb-5 text-sm font-semibold uppercase tracking-wider text-text-tertiary">同类工具</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {related.map((r) => (
-            <a
-              href={`/products/${r.id}`}
-              class="rounded-xl border border-border bg-surface p-4 transition hover:border-accent hover:bg-surface-hover"
-            >
-              <div class="mb-2 font-bold">{r.data.name}</div>
-              <div class="text-xs text-text-secondary">{r.data.vendor}</div>
-              <div class="mt-2 text-xs text-green">✅ {r.data.pros[0]}</div>
+            <a href={`/products/${r.id}`} class="glass-card group block rounded-xl p-4 no-underline">
+              <h3 class="text-[14px] font-semibold text-text group-hover:text-text truncate">{r.data.name}</h3>
+              <p class="mt-0.5 text-[12px] text-text-muted truncate">{r.data.vendor}</p>
+              <div class="mt-3 h-px w-0 bg-gradient-to-r from-transparent via-slate-300/40 to-transparent transition-all duration-400 group-hover:w-full"></div>
             </a>
           ))}
         </div>
       </section>
     )}
-  </article>
+  </div>
 </Layout>

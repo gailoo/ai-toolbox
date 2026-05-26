@@ -8,15 +8,15 @@ const allProducts = await getCollection('products');
 const sorted = allProducts.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
 
 const CATEGORIES = [
-  { cat: 'all', icon: '🌐', label: '全部' },
-  { cat: 'chat', icon: '💬', label: '对话大模型' },
-  { cat: 'ide', icon: '💻', label: '代码IDE' },
-  { cat: 'ui', icon: '🎨', label: 'UI前端' },
-  { cat: 'agent', icon: '⚙️', label: 'Agent编排' },
-  { cat: 'media', icon: '🖼️', label: '图片视频' },
-  { cat: 'search', icon: '🔍', label: '搜索知识' },
-  { cat: 'data', icon: '📊', label: '数据分析' },
-  { cat: 'audio', icon: '🎵', label: '音频音乐' },
+  { cat: 'all', icon: '◈', label: '全部' },
+  { cat: 'chat', icon: '◆', label: '对话模型' },
+  { cat: 'ide', icon: '⌘', label: '代码IDE' },
+  { cat: 'ui', icon: '◎', label: 'UI前端' },
+  { cat: 'agent', icon: '⚡', label: 'Agent' },
+  { cat: 'media', icon: '◐', label: '图片视频' },
+  { cat: 'search', icon: '⊕', label: '搜索知识' },
+  { cat: 'data', icon: '▣', label: '数据分析' },
+  { cat: 'audio', icon: '♫', label: '音频音乐' },
 ];
 
 const CATEGORY_LABELS: Record<string, string> = {
@@ -37,60 +37,76 @@ for (const p of sorted) {
 ---
 
 <Layout>
-  <!-- Hero -->
-  <section class="relative overflow-hidden border-b border-border">
-    <div class="absolute inset-0 bg-gradient-to-br from-bg via-[#2d1b69]/20 to-bg" />
-    <div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
-      <div class="mx-auto max-w-2xl text-center">
-        <h1 class="mb-4 text-4xl font-extrabold tracking-tight sm:text-5xl">
-          <span class="bg-gradient-to-r from-accent-light via-[#74b9ff] to-[#81ecec] bg-clip-text text-transparent">
-            全栈链路 AI 产品导航
+  <!-- ═══════════════ Hero Section — Apple-style ═══════════════ -->
+  <section class="relative overflow-hidden border-b border-border/40 bg-white">
+    <!-- Subtle gradient background -->
+    <div class="absolute inset-0 bg-gradient-to-b from-white via-slate-50/[0.4] to-white" />
+
+    <!-- Decorative orbs — Apple neutral -->
+    <div class="glow-orb top-[-20%] right-[-10%] h-[500px] w-[500px]" style="background-color: #e8e8ed;" />
+    <div class="glow-orb bottom-[-15%] left-[-10%] h-[400px] w-[400px]" style="background-color: #f0f0f4;" />
+
+    <div class="relative mx-auto max-w-6xl px-5 pt-20 pb-16 sm:pt-28 sm:pb-20 text-center">
+      <!-- Badge -->
+      <div class="mb-6 inline-flex justify-center">
+        <div class="inline-flex items-center gap-2 rounded-full border border-border bg-white/80 backdrop-blur-sm px-4 py-1.5 text-[12px] font-medium text-text-secondary shadow-sm">
+          <span class="relative flex h-1.5 w-1.5">
+            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-60"></span>
+            <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-success"></span>
           </span>
-        </h1>
-        <p class="mb-8 text-lg text-text-secondary">
-          聚焦互联网全栈开发链路，持续追踪最新最具影响力的 AI 产品<br />
-          梳理各产品的核心优势与局限性，助你精准选型
-        </p>
-        <!-- Search -->
-        <div class="relative mx-auto max-w-lg">
+          精选全栈开发链路中最具影响力的 AI 工具
+        </div>
+      </div>
+
+      <!-- Title — Apple-like large typography -->
+      <h1 class="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl text-text leading-[1.05]">
+        发现最好的
+        <br />
+        <span class="gradient-text">AI 工具</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="mx-auto mt-6 max-w-xl text-base sm:text-lg text-text-secondary leading-relaxed">
+        持续追踪市场上最新 AI 产品，梳理每个工具的核心优势与局限性，助你精准选型。
+      </p>
+
+      <!-- Search — Glass style -->
+      <div class="mx-auto mt-10 max-w-md">
+        <div class="group relative">
           <input
             id="searchInput"
             type="text"
             placeholder="搜索产品名称、厂商或特点..."
-            class="w-full rounded-xl border border-border bg-surface py-3 pl-12 pr-4 text-sm text-text outline-none transition placeholder:text-text-secondary/60 focus:border-accent"
+            class="w-full rounded-2xl border border-border bg-white/70 py-3.5 pl-11 pr-4 text-sm text-text placeholder:text-text-muted outline-none transition-all duration-200 shadow-sm focus:border-slate-300 focus:bg-white focus:shadow-lg focus:shadow-slate-500/8 backdrop-blur-xl"
           />
-          <span class="absolute left-4 top-1/2 -translate-y-1/2 text-lg">🔍</span>
+          <svg class="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted transition-colors group-focus-within:text-accent" viewBox="0 0 16 16" fill="none"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" fill="currentColor"/></svg>
         </div>
       </div>
 
-      <!-- Stats -->
-      <div class="mx-auto mt-10 flex max-w-2xl justify-center gap-4 sm:gap-6">
-        <div class="rounded-xl border border-border bg-surface px-5 py-3 text-center">
-          <div class="text-2xl font-extrabold bg-gradient-to-r from-accent-light to-[#74b9ff] bg-clip-text text-transparent">
-            {sorted.length}
-          </div>
-          <div class="text-xs text-text-secondary">收录产品</div>
+      <!-- Stats row — Clean minimal -->
+      <div class="mx-auto mt-14 flex max-w-md justify-center items-center gap-8">
+        <div class="flex flex-col items-center">
+          <div class="text-3xl font-bold tracking-tight gradient-text">{sorted.length}</div>
+          <div class="mt-1 text-[11px] font-medium uppercase tracking-wider text-text-muted">收录工具</div>
         </div>
-        <div class="rounded-xl border border-border bg-surface px-5 py-3 text-center">
-          <div class="text-2xl font-extrabold bg-gradient-to-r from-accent-light to-[#74b9ff] bg-clip-text text-transparent">
-            {CATEGORIES.length - 1}
-          </div>
-          <div class="text-xs text-text-secondary">分类数量</div>
+        <div class="w-px h-10 bg-border" />
+        <div class="flex flex-col items-center">
+          <div class="text-3xl font-bold tracking-tight gradient-text">{CATEGORIES.length - 1}</div>
+          <div class="mt-1 text-[11px] font-medium uppercase tracking-wider text-text-muted">分类</div>
         </div>
-        <div class="rounded-xl border border-border bg-surface px-5 py-3 text-center">
-          <div class="text-2xl font-extrabold bg-gradient-to-r from-accent-light to-[#74b9ff] bg-clip-text text-transparent">
-            2026
-          </div>
-          <div class="text-xs text-text-secondary">数据年份</div>
+        <div class="w-px h-10 bg-border" />
+        <div class="flex flex-col items-center">
+          <div class="text-3xl font-bold tracking-tight gradient-text">2026</div>
+          <div class="mt-1 text-[11px] font-medium uppercase tracking-wider text-text-muted">更新</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Filters -->
-  <section class="border-b border-border bg-bg/80 backdrop-blur-sm">
-    <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6">
-      <div class="flex flex-wrap gap-2" id="filterBar">
+  <!-- ═══ Filter Bar — Sticky glass ═══ -->
+  <section class="sticky top-14 z-40 border-b border-border/40 bg-white/72 backdrop-blur-2xl supports-[backdrop-filter]:bg-white/50">
+    <div class="mx-auto max-w-6xl px-5 py-3 overflow-x-auto scrollbar-hide">
+      <div class="flex gap-1.5 min-w-max" id="filterBar">
         {CATEGORIES.map((c) => (
           <FilterTag
             icon={c.icon}
@@ -104,11 +120,11 @@ for (const p of sorted) {
     </div>
   </section>
 
-  <!-- Product Grid -->
-  <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+  <!-- ═══ Product Grid ═══ -->
+  <section class="mx-auto max-w-6xl px-5 py-12 sm:py-16">
     <div
       id="productGrid"
-      class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+      class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 stagger"
       data-products={JSON.stringify(sorted.map(p => ({
         slug: p.id,
         name: p.data.name,
@@ -137,9 +153,11 @@ for (const p of sorted) {
     </div>
 
     <!-- Empty state -->
-    <div id="emptyState" class="hidden py-20 text-center">
-      <div class="mb-4 text-5xl">🔍</div>
-      <p class="text-text-secondary">没有找到匹配的产品，试试其他关键词</p>
+    <div id="emptyState" class="hidden py-24 text-center">
+      <div class="mx-auto mb-4 inline-flex h-16 w-16 items-center justify-center rounded-2xl border border-border bg-white shadow-sm">
+        <svg class="h-6 w-6 text-text-muted" viewBox="0 0 16 16" fill="none"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" stroke="currentColor" stroke-width="1.2" opacity="0.35"/></svg>
+      </div>
+      <p class="text-sm text-text-secondary">没有找到匹配的工具，试试其他关键词</p>
     </div>
   </section>
 </Layout>
@@ -167,7 +185,6 @@ for (const p of sorted) {
           p.cons.join(' ').toLowerCase().includes(q))
     );
 
-    // Toggle visibility of cards
     const cards = grid.querySelectorAll('a');
     cards.forEach((card, i) => {
       const p = products[i];
@@ -195,13 +212,21 @@ for (const p of sorted) {
     if (!tag) return;
     currentCat = (tag as HTMLElement).dataset.cat!;
     filterBar.querySelectorAll('[data-cat]').forEach((t) => {
-      t.classList.toggle('border-accent', t === tag);
-      t.classList.toggle('bg-accent', t === tag);
-      t.classList.toggle('text-white', t === tag);
-      t.classList.toggle('border-border', t !== tag);
-      t.classList.toggle('bg-surface', t !== tag);
-      t.classList.toggle('text-text-secondary', t !== tag);
+      const isActive = t === tag;
+      t.classList.toggle('border-slate-300', isActive);
+      t.classList.toggle('bg-slate-50/80', isActive);
+      t.classList.toggle('text-accent-dim', isActive);
+      t.classList.toggle('shadow-sm', isActive);
+      t.classList.toggle('shadow-slate-500/8', isActive);
+      t.classList.toggle('border-border', !isActive);
+      t.classList.toggle('bg-white/50', !isActive);
+      t.classList.toggle('text-text-secondary', !isActive);
     });
     render(searchInput.value, currentCat);
   });
 </script>
+
+<style>
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+</style>

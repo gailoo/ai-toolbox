@@ -1,29 +1,239 @@
+/* ── Google Fonts: Inter + JetBrains Mono ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #0f1117;
-  --color-surface: #1a1d27;
-  --color-surface-hover: #222633;
-  --color-border: #2a2e3d;
-  --color-text: #e4e6ed;
-  --color-text-secondary: #8b8fa3;
-  --color-accent: #6c5ce7;
-  --color-accent-light: #a29bfe;
-  --color-green: #00b894;
-  --color-red: #e17055;
+  /* ═══ Light Background Layers — Apple-style ═══ */
+  --color-bg: #f5f5f7;
+  --color-bg-elevated: #ffffff;
+  --color-surface: rgba(255, 255, 255, 0.72);
+  --color-surface-hover: rgba(255, 255, 255, 0.88);
+  --color-surface-active: #ffffff;
+
+  /* ═══ Borders — glass style ═══ */
+  --color-border: rgba(0, 0, 0, 0.06);
+  --color-border-hover: rgba(0, 0, 0, 0.10);
+  --color-border-accent: rgba(99, 102, 241, 0.20);
+
+  /* ═══ Text hierarchy (Apple black) ═══ */
+  --color-text: #1d1d1f;
+  --color-text-secondary: #6e6e73;
+  --color-text-tertiary: #86868b;
+  --color-text-muted: #aeaeb2;
+
+  /* ═══ Accent — Apple-like ═══ */
+  --color-accent: #1d1d1f;
+  --color-accent-light: #424245;
+  --color-accent-dim: #1d1d1f;
+  --color-accent-glow: rgba(29, 29, 31, 0.04);
+
+  /* ═══ Semantic colors — soft muted tones ═══ */
+  --color-success: #38a169;
+  --color-success-dim: rgba(56, 161, 105, 0.08);
+  --color-warning: #d69e2e;
+  --color-danger: #e53e3e;
+  --color-danger-dim: rgba(229, 62, 62, 0.06);
+
+  /* ═══ Gradients — subtle ═══ */
+  --gradient-hero: linear-gradient(180deg, #fafafb 0%, #f2f2f4 100%);
+  --gradient-text: linear-gradient(135deg, #1d1d1f 0%, #1d1d1f 100%);
+  --gradient-card-glow: radial-gradient(ellipse at 50% 0%, rgba(29, 29, 31, 0.03) 0%, transparent 60%);
+  --gradient-glass-shine: linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 50%);
+
+  /* ═══ Typography ═══ */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', 'PingFang SC', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+
+  /* ═══ Spacing ═══ */
+  --spacing-section: clamp(4rem, 8vw, 8rem);
+
+  /* ═══ Border radius ═══ */
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
 }
 
+/* ═══ Base ═══ */
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  font-family: var(--font-sans);
+  line-height: 1.55;
+  letter-spacing: -0.015em;
 }
 
 ::selection {
+  background: rgba(74, 85, 104, 0.15);
+  color: inherit;
+}
+
+/* ═══ Scrollbar (subtle) ═══ */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.15); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0, 0, 0, 0.25); }
+
+/* ═══ Premium focus ring ═══ */
+*:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(74, 85, 104, 0.12), 0 0 0 1px var(--color-accent);
+}
+
+/* ════ GLASS CARD — Core Component ════ */
+.glass-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.5) inset,
+    0 4px 24px rgba(0, 0, 0, 0.04),
+    0 1px 2px rgba(0, 0, 0, 0.02);
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.glass-card:hover {
+  background: var(--color-surface-hover);
+  border-color: var(--color-border-hover);
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.6) inset,
+    0 12px 32px rgba(0, 0, 0, 0.07),
+    0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+/* ═══ Gradient text utility ═══ */
+.gradient-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ═══ Subtle glow orb for backgrounds ═══ */
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(96px);
+  opacity: 0.40;
+  pointer-events: none;
+}
+
+/* ═══ Animated underline on hover ═══ */
+.hover-underline {
+  position: relative;
+}
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
   background: var(--color-accent);
-  color: white;
+  transition: width 0.25s ease;
+}
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+/* ═══ Fade-in animation ═══ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  opacity: 0;
+}
+
+/* Stagger children delays */
+.stagger > *:nth-child(1) { animation-delay: 0ms; }
+.stagger > *:nth-child(2) { animation-delay: 50ms; }
+.stagger > *:nth-child(3) { animation-delay: 100ms; }
+.stagger > *:nth-child(4) { animation-delay: 150ms; }
+.stagger > *:nth-child(5) { animation-delay: 200ms; }
+.stagger > *:nth-child(6) { animation-delay: 250ms; }
+.stagger > *:nth-child(7) { animation-delay: 300ms; }
+.stagger > *:nth-child(8) { animation-delay: 350ms; }
+.stagger > *:nth-child(9) { animation-delay: 400ms; }
+
+/* ═══ Prose overrides for light theme ═══ */
+.prose :where(strong) {
+  color: var(--color-text);
+  font-weight: 600;
+}
+.prose :where(code):not(:where(pre *)) {
+  background: rgba(74, 85, 104, 0.06);
+  color: var(--color-accent-dim);
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  border: 1px solid rgba(74, 85, 104, 0.06);
+}
+.prose :where(a) {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.prose :where(a):hover {
+  opacity: 0.7;
+}
+
+/* ═══ Glass shine overlay effect ═══ */
+.glass-shine {
+  position: relative;
+  overflow: hidden;
+}
+.glass-shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+.glass-shine:hover::before {
+  left: 150%;
+}
+
+/* ═══ Avatar logo — circular with subtle ring ═══ */
+.avatar-logo {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid rgba(0, 0, 0, 0.08);
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.avatar-logo:hover {
+  border-color: rgba(0, 0, 0, 0.18);
+  transform: scale(1.06);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+}
+
+/* ═══ Pulse dot ═══ */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.8); }
+}
+.pulse-dot {
+  animation: pulse-dot 2.5s ease-in-out infinite;
 }
