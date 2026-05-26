@@ -1,0 +1,1107 @@
+{
+  "generatedAt": "2026-05-25T13:09:45.424Z",
+  "sources": [
+    {
+      "name": "TechCrunch AI",
+      "region": "Global",
+      "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+      "tags": [
+        "startup",
+        "product",
+        "global"
+      ]
+    },
+    {
+      "name": "The Decoder",
+      "region": "Global",
+      "url": "https://the-decoder.com/feed/",
+      "tags": [
+        "research",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "name": "MIT Technology Review AI",
+      "region": "Global",
+      "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed/",
+      "tags": [
+        "research",
+        "policy",
+        "global"
+      ]
+    },
+    {
+      "name": "VentureBeat AI",
+      "region": "Global",
+      "url": "https://venturebeat.com/category/ai/feed/",
+      "tags": [
+        "enterprise",
+        "startup",
+        "global"
+      ]
+    },
+    {
+      "name": "Google AI Blog",
+      "region": "Global",
+      "url": "https://blog.google/technology/ai/rss/",
+      "tags": [
+        "big-tech",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "name": "Hugging Face Blog",
+      "region": "Global",
+      "url": "https://huggingface.co/blog/feed.xml",
+      "tags": [
+        "open-source",
+        "models",
+        "developer"
+      ]
+    }
+  ],
+  "items": [
+    {
+      "title": "Google Deepmind&#039;s AlphaProof Nexus solves decades-old math problems for a few hundred dollars",
+      "link": "https://the-decoder.com/google-deepminds-alphaproof-nexus-solves-decades-old-math-problems-for-a-few-hundred-dollars/",
+      "source": "The Decoder",
+      "region": "Global",
+      "publishedAt": "2026-05-25T10:41:19.000Z",
+      "summary": "Google Deepmind's AlphaProof Nexus has autonomously solved nine open Erdős problems, including two that stumped mathematicians for 56 years, for just a few hundred dollars per problem in inference costs. Unlike OpenAI's ",
+      "tags": [
+        "research",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "George Hotz says coding agents will be \"one of the most costly mistakes\" in software development",
+      "link": "https://the-decoder.com/george-hotz-says-coding-agents-will-be-one-of-the-most-costly-mistakes-in-software-development/",
+      "source": "The Decoder",
+      "region": "Global",
+      "publishedAt": "2026-05-25T09:05:34.000Z",
+      "summary": "Programmer George Hotz warns that AI coding agents will become one of the industry's most costly mistakes. After six months of testing, his verdict: LLMs deliver fast prototypes but fall apart on the details, producing b",
+      "tags": [
+        "research",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "AI models often give the right answers but point to the wrong sources",
+      "link": "https://the-decoder.com/ai-models-often-give-the-right-answers-but-point-to-the-wrong-sources/",
+      "source": "The Decoder",
+      "region": "Global",
+      "publishedAt": "2026-05-25T07:30:09.000Z",
+      "summary": "Leading AI models like GPT and Gemini routinely cite text passages in document analyses that don't actually support their answers. Even when the answer is right, the cited evidence is often wrong. Researchers at Peking U",
+      "tags": [
+        "research",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "Everyone is navigating AI security in real time &#8212; even Google",
+      "link": "https://techcrunch.com/2026/05/24/everyone-is-navigating-ai-security-in-real-time-even-google/",
+      "source": "TechCrunch AI",
+      "region": "Global",
+      "publishedAt": "2026-05-24T21:39:21.000Z",
+      "summary": "We're in the transition period -- all of us.",
+      "tags": [
+        "startup",
+        "product",
+        "global"
+      ]
+    },
+    {
+      "title": "I tried Amazon&#8217;s Bee wearable and am both intrigued and slightly creeped out",
+      "link": "https://techcrunch.com/2026/05/24/i-tried-amazons-bee-wearable-and-am-both-intrigued-and-slightly-creeped-out/",
+      "source": "TechCrunch AI",
+      "region": "Global",
+      "publishedAt": "2026-05-24T15:00:00.000Z",
+      "summary": "Like other AI wearables, Amazon's Bee offers an odd combination of convenience and privacy anxiety.",
+      "tags": [
+        "startup",
+        "product",
+        "global"
+      ]
+    },
+    {
+      "title": "ByteDance study finds that asking LMMs questions beats making it transcribe text for long document training",
+      "link": "https://the-decoder.com/bytedance-study-finds-that-asking-lmms-questions-beats-making-it-transcribe-text-for-long-document-training/",
+      "source": "The Decoder",
+      "region": "Global",
+      "publishedAt": "2026-05-24T13:28:45.000Z",
+      "summary": "ByteDance Seed shows that a 7B model can answer questions on long, image-heavy documents more reliably than much larger models, even when documents are four times longer than anything it saw during training. Instead of t",
+      "tags": [
+        "research",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "Deepmind&#039;s Hassabis sees humanity \"in the foothills of the singularity\" while LeCun says current AI isn&#039;t intelligent",
+      "link": "https://the-decoder.com/deepminds-hassabis-sees-humanity-in-the-foothills-of-the-singularity-while-lecun-says-current-ai-isnt-intelligent/",
+      "source": "The Decoder",
+      "region": "Global",
+      "publishedAt": "2026-05-24T12:54:07.000Z",
+      "summary": "Yann LeCun says current AI systems aren't genuinely intelligent. Demis Hassabis thinks humanity is already \"standing in the foothills of the singularity.\" And Gemini co-lead Oriol Vinyals splits the difference: today's m",
+      "tags": [
+        "research",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "Why you shouldn&#039;t leave model selection on default in Copilot, Gemini and other AI tools",
+      "link": "https://the-decoder.com/why-you-shouldnt-leave-model-selection-on-default-in-copilot-gemini-and-other-ai-tools/",
+      "source": "The Decoder",
+      "region": "Global",
+      "publishedAt": "2026-05-24T10:17:46.000Z",
+      "summary": "When analyzing data, Microsoft Copilot invents country differences where none exist. Mathematician Adam Kucharski fed the tool identical datasets with different country labels, and Copilot delivered detailed stereotypes ",
+      "tags": [
+        "research",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "Anthropic may keep supplying Claude to the NSA despite being flagged as a supply chain risk by the Pentagon",
+      "link": "https://the-decoder.com/anthropic-may-keep-supplying-claude-to-the-nsa-despite-being-flagged-as-a-supply-chain-risk-by-the-pentagon/",
+      "source": "The Decoder",
+      "region": "Global",
+      "publishedAt": "2026-05-24T08:51:02.000Z",
+      "summary": "Anthropic will likely keep supplying AI models to the NSA despite being labeled a \"supply chain risk.\" Intelligence agencies lack Nvidia's latest Grace Blackwell chips, and Anthropic's \"Mythos\" model reportedly runs on o",
+      "tags": [
+        "research",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "Researchers let Claude Code discover AI scaling algorithms that humans probably wouldn&#039;t have designed",
+      "link": "https://the-decoder.com/researchers-let-claude-code-discover-ai-scaling-algorithms-that-humans-probably-wouldnt-have-designed/",
+      "source": "The Decoder",
+      "region": "Global",
+      "publishedAt": "2026-05-24T08:06:35.000Z",
+      "summary": "Researchers from UMD, Google, Meta, and other institutions use AutoTTS to let a coding agent independently discover control algorithms for AI reasoning. The algorithm it found cuts compute by about 70 percent compared to",
+      "tags": [
+        "research",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "Deepseek makes its 75 percent discount permanent, pricing output tokens at least 34x below GPT-5.5",
+      "link": "https://the-decoder.com/deepseek-makes-its-75-percent-discount-permanent-pricing-output-tokens-at-least-34x-below-gpt-5-5/",
+      "source": "The Decoder",
+      "region": "Global",
+      "publishedAt": "2026-05-23T17:10:59.000Z",
+      "summary": "Deepseek is making the 75 percent discount on its top model V4-Pro permanent. At $0.435 per million input tokens, it's at least 11.5 times cheaper than GPT-5.5 and over 34 times cheaper on output. For token-hungry agenti",
+      "tags": [
+        "research",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "Ferrari is using IBM&#8217;s AI to create F1 superfans",
+      "link": "https://techcrunch.com/2026/05/23/ferrari-is-using-ai-to-create-f1-superfans/",
+      "source": "TechCrunch AI",
+      "region": "Global",
+      "publishedAt": "2026-05-23T15:08:00.000Z",
+      "summary": "IBM and Scuderia Ferrari HP take TechCrunch inside how they are redefining the fan experience.",
+      "tags": [
+        "startup",
+        "product",
+        "global"
+      ]
+    },
+    {
+      "title": "Elon Musk has given up on solar power (on Earth)",
+      "link": "https://techcrunch.com/2026/05/23/elon-musk-has-given-up-on-solar-power-on-earth/",
+      "source": "TechCrunch AI",
+      "region": "Global",
+      "publishedAt": "2026-05-23T13:00:00.000Z",
+      "summary": "Elon Muks's xAI has gone all in on natural gas, while SpaceX is obsessed with orbital data centers. What happened to the \"solar-electric economy\" he promised?",
+      "tags": [
+        "startup",
+        "product",
+        "global"
+      ]
+    },
+    {
+      "title": "One of the world&#039;s top law schools draws a hard line against AI in legal education",
+      "link": "https://the-decoder.com/one-of-the-worlds-top-law-schools-draws-a-hard-line-against-ai-in-legal-education/",
+      "source": "The Decoder",
+      "region": "Global",
+      "publishedAt": "2026-05-23T10:55:03.000Z",
+      "summary": "UC Berkeley Law will ban AI from nearly all graded work starting in summer 2026, from outlining and drafting to proofreading. Only research use remains allowed. The school’s rationale: future lawyers must first learn to ",
+      "tags": [
+        "research",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "Towards Speed-of-Light Text Generation with Nemotron-Labs Diffusion Language Models",
+      "link": "https://huggingface.co/blog/nvidia/nemotron-labs-diffusion",
+      "source": "Hugging Face Blog",
+      "region": "Global",
+      "publishedAt": "2026-05-23T00:02:03.000Z",
+      "summary": "",
+      "tags": [
+        "open-source",
+        "models",
+        "developer"
+      ]
+    },
+    {
+      "title": "AI is being used to resurrect the voices of dead pilots",
+      "link": "https://techcrunch.com/2026/05/22/ai-is-being-used-to-resurrect-the-voices-of-dead-pilots/",
+      "source": "TechCrunch AI",
+      "region": "Global",
+      "publishedAt": "2026-05-22T23:03:33.000Z",
+      "summary": "People used AI on a spectrogram image of cockpit recordings to reconstruct them, forcing the NTSB to temporarily block access to its docket system.",
+      "tags": [
+        "startup",
+        "product",
+        "global"
+      ]
+    },
+    {
+      "title": "Google goes for the glitter with disco-ball icons: &#8216;Are y&#8217;all sure you still want this?&#8217;",
+      "link": "https://techcrunch.com/2026/05/22/google-goes-for-the-glitter-with-disco-ball-icons-are-yall-sure-you-still-want-this/",
+      "source": "TechCrunch AI",
+      "region": "Global",
+      "publishedAt": "2026-05-22T21:02:36.000Z",
+      "summary": "You can now disco ball-ify your entire Pixel home screen, says Google.",
+      "tags": [
+        "startup",
+        "product",
+        "global"
+      ]
+    },
+    {
+      "title": "How VCs and founders use inflated ‘ARR’ to crown AI startups",
+      "link": "https://techcrunch.com/2026/05/22/how-vcs-and-founders-use-inflated-arr-to-kingmake-ai-startups/",
+      "source": "TechCrunch AI",
+      "region": "Global",
+      "publishedAt": "2026-05-22T20:40:48.000Z",
+      "summary": "Some AI startups are stretching traditional revenue metrics when talking about progress publicly. And their investors are fully aware.",
+      "tags": [
+        "startup",
+        "product",
+        "global"
+      ]
+    },
+    {
+      "title": "Elon Musk can&#8217;t hear you over the sound of his $1.75 trillion IPO",
+      "link": "https://techcrunch.com/podcast/elon-musk-cant-hear-you-over-the-sound-of-his-1-75-trillion-ipo/",
+      "source": "TechCrunch AI",
+      "region": "Global",
+      "publishedAt": "2026-05-22T18:17:07.000Z",
+      "summary": "The SpaceX S-1 is finally here, and the story it tells goes&#160;way further&#160;than rockets. The filing runs to 36 pages of risk factors alone, and the numbers inside match the ambition: a&#160;$28 trillion&#160;total",
+      "tags": [
+        "startup",
+        "product",
+        "global"
+      ]
+    },
+    {
+      "title": "Catch up on the Dialogues stage at Google I/O 2026.",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/io-2026-dialogues-recap/",
+      "source": "Google AI Blog",
+      "region": "Global",
+      "publishedAt": "2026-05-22T18:00:00.000Z",
+      "summary": "A recap of the 2026 I/O Dialogues, where leaders discuss the future of AI, quantum computing, robotics and creativity.",
+      "tags": [
+        "big-tech",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "You can no longer Google the word &#8216;disregard&#8217;",
+      "link": "https://techcrunch.com/2026/05/22/you-can-no-longer-google-the-word-disregard/",
+      "source": "TechCrunch AI",
+      "region": "Global",
+      "publishedAt": "2026-05-22T16:16:48.000Z",
+      "summary": "After Google Search's AI update, the word \"disregard\" now effectively breaks the search interface.",
+      "tags": [
+        "startup",
+        "product",
+        "global"
+      ]
+    },
+    {
+      "title": "We tried Google’s AI glasses and they’re almost there",
+      "link": "https://techcrunch.com/2026/05/22/we-tried-googles-ai-glasses-and-theyre-almost-there/",
+      "source": "TechCrunch AI",
+      "region": "Global",
+      "publishedAt": "2026-05-22T15:37:15.000Z",
+      "summary": "Google demoed prototype Android XR glasses that overlay Gemini-powered translation, navigation, and other information directly into your field of view.",
+      "tags": [
+        "startup",
+        "product",
+        "global"
+      ]
+    },
+    {
+      "title": "Specialization Beats Scale: A Strategic Variable Most AI Procurement Decisions Overlook",
+      "link": "https://huggingface.co/blog/Dharma-AI/specialization-beats-scale",
+      "source": "Hugging Face Blog",
+      "region": "Global",
+      "publishedAt": "2026-05-22T15:25:59.000Z",
+      "summary": "",
+      "tags": [
+        "open-source",
+        "models",
+        "developer"
+      ]
+    },
+    {
+      "title": "SpaceX files to go public, and the math requires a little faith",
+      "link": "https://techcrunch.com/video/spacex-files-to-go-public-and-the-math-requires-a-little-faith/",
+      "source": "TechCrunch AI",
+      "region": "Global",
+      "publishedAt": "2026-05-22T14:30:00.000Z",
+      "summary": "The SpaceX S-1 is finally here, and the story it tells goes&#160;way further&#160;than rockets. The filing runs to 36 pages of risk factors alone, and the numbers inside match the ambition: a&#160;$28 trillion&#160;total",
+      "tags": [
+        "startup",
+        "product",
+        "global"
+      ]
+    },
+    {
+      "title": "Google I/O showed how the path for AI-driven science is shifting",
+      "link": "https://www.technologyreview.com/2026/05/22/1137813/google-i-o-showed-how-the-path-for-ai-science-is-shifting/",
+      "source": "MIT Technology Review AI",
+      "region": "Global",
+      "publishedAt": "2026-05-22T10:00:00.000Z",
+      "summary": "During Tuesday’s Google I/O keynote, Demis Hassabis, the CEO of Google DeepMind, proclaimed that we are currently “standing in the foothills of the singularity.” It was a striking statement—the singularity is the theoret",
+      "tags": [
+        "research",
+        "policy",
+        "global"
+      ]
+    },
+    {
+      "title": "Roundtables: Can AI Learn to Understand the World?",
+      "link": "https://www.technologyreview.com/2026/05/21/1137756/roundtables-can-ai-learn-to-understand-the-world/",
+      "source": "MIT Technology Review AI",
+      "region": "Global",
+      "publishedAt": "2026-05-21T20:41:05.000Z",
+      "summary": "Listen to the session or watch below AI companies want to build systems that understand the external world and overcome the limitations of LLMs. Recent developments have brought world models to the forefront of the AI di",
+      "tags": [
+        "research",
+        "policy",
+        "global"
+      ]
+    },
+    {
+      "title": "Spotify and Universal Music strike deal allowing fan-made AI covers and remixes",
+      "link": "https://techcrunch.com/2026/05/21/spotify-and-universal-music-strike-deal-allowing-fan-made-ai-covers-and-remixes/",
+      "source": "TechCrunch AI",
+      "region": "Global",
+      "publishedAt": "2026-05-21T19:45:00.000Z",
+      "summary": "Spotify is partnering with Universal Music Group￼ to let Premium subscribers create AI-generated song covers and remixes, with participating artists receiving a share of the revenue.",
+      "tags": [
+        "startup",
+        "product",
+        "global"
+      ]
+    },
+    {
+      "title": "Six search engines worth trying now that Google isn’t really Google anymore",
+      "link": "https://techcrunch.com/2026/05/21/six-search-engines-worth-trying-now-that-google-isnt-really-google-anymore/",
+      "source": "TechCrunch AI",
+      "region": "Global",
+      "publishedAt": "2026-05-21T19:19:05.000Z",
+      "summary": "Google is about to look really different, and if you're not a fan of the AI overview feature, then you're not going to like what's coming.",
+      "tags": [
+        "startup",
+        "product",
+        "global"
+      ]
+    },
+    {
+      "title": "Scaling creativity in the age of AI",
+      "link": "https://www.technologyreview.com/2026/05/21/1137613/scaling-creativity-in-the-age-of-ai/",
+      "source": "MIT Technology Review AI",
+      "region": "Global",
+      "publishedAt": "2026-05-21T19:16:43.000Z",
+      "summary": "Storytelling is core to humanity&#8217;s DNA, stemming from our impulse to express ideals, warnings, hopes, and experiences. Technology has always been woven through the medium and the distribution: from early humans&#82",
+      "tags": [
+        "research",
+        "policy",
+        "global"
+      ]
+    },
+    {
+      "title": "Trump delays AI security executive order, saying language &#8216;could have been a blocker&#8217;",
+      "link": "https://techcrunch.com/2026/05/21/trump-delays-ai-security-executive-order-i-dont-want-to-get-in-the-way-of-that-leading/",
+      "source": "TechCrunch AI",
+      "region": "Global",
+      "publishedAt": "2026-05-21T17:30:45.000Z",
+      "summary": "President Trump delayed signing an executive order that would have required pre-release government security reviews of AI models, citing dissatisfaction with the order's language.",
+      "tags": [
+        "startup",
+        "product",
+        "global"
+      ]
+    },
+    {
+      "title": "Spotify adds AI-powered Q&#038;A and briefing generation features to podcasts",
+      "link": "https://techcrunch.com/2026/05/21/spotify-adds-ai-powered-qa-and-briefing-generation-features-to-podcasts/",
+      "source": "TechCrunch AI",
+      "region": "Global",
+      "publishedAt": "2026-05-21T15:27:00.000Z",
+      "summary": "Spotify will let you generate daily or weekly briefs based on your prompts",
+      "tags": [
+        "startup",
+        "product",
+        "global"
+      ]
+    },
+    {
+      "title": "Spotify takes on Google&#8217;s NotebookLM with its new app",
+      "link": "https://techcrunch.com/2026/05/21/spotify-debuts-a-new-desktop-app-for-creating-personal-podcasts/",
+      "source": "TechCrunch AI",
+      "region": "Global",
+      "publishedAt": "2026-05-21T15:27:00.000Z",
+      "summary": "Spotify is releasing the new desktop app as a research preview in more than 20 markets.",
+      "tags": [
+        "startup",
+        "product",
+        "global"
+      ]
+    },
+    {
+      "title": "Spotify launches an ElevenLabs-powered audiobook creation tool",
+      "link": "https://techcrunch.com/2026/05/21/spotify-launches-an-elevenlabs-powered-audiobook-creation-tool/",
+      "source": "TechCrunch AI",
+      "region": "Global",
+      "publishedAt": "2026-05-21T15:27:00.000Z",
+      "summary": "The AI-powered audiobook generation won't bind authors to an exclusive contract, meaning they are free to publish their generated audiobooks anywhere.",
+      "tags": [
+        "startup",
+        "product",
+        "global"
+      ]
+    },
+    {
+      "title": "Anthropic’s Code with Claude showed off coding&#8217;s future—whether you like it or not",
+      "link": "https://www.technologyreview.com/2026/05/21/1137735/anthropics-code-with-claude-showed-off-codings-future-whether-you-like-it-or-not/",
+      "source": "MIT Technology Review AI",
+      "region": "Global",
+      "publishedAt": "2026-05-21T14:30:45.000Z",
+      "summary": "The vibes were strong at Code with Claude, Anthropic’s two-day event for software developers in London that kicked off on May 19, the same day as Google’s I/O in Palo Alto. (A coincidence, not a flex, Anthropic staffers ",
+      "tags": [
+        "research",
+        "policy",
+        "global"
+      ]
+    },
+    {
+      "title": "The Path, founded by Tony Robbins and Calm alums, hopes to offer safer AI therapy",
+      "link": "https://techcrunch.com/2026/05/21/the-path-founded-by-tony-robbins-and-calm-alums-wants-to-offer-safer-ai-therapy/",
+      "source": "TechCrunch AI",
+      "region": "Global",
+      "publishedAt": "2026-05-21T14:00:00.000Z",
+      "summary": "The Path says its AI model has scored 95 on the mental health safety AI benchmark, Vera-MH. This compares to a top score of 65 for the consumer bots.",
+      "tags": [
+        "startup",
+        "product",
+        "global"
+      ]
+    },
+    {
+      "title": "Hark raises $700M Series A for its secretive &#8216;universal&#8217; AI interface",
+      "link": "https://techcrunch.com/2026/05/21/hark-raises-700m-series-a-for-its-secretive-universal-ai-interface/",
+      "source": "TechCrunch AI",
+      "region": "Global",
+      "publishedAt": "2026-05-21T14:00:00.000Z",
+      "summary": "Hark expects to release its first multimodal models this summer, which it says will power a personal AI platform that works with existing products and services. The company expects to follow that with hardware devices bu",
+      "tags": [
+        "startup",
+        "product",
+        "global"
+      ]
+    },
+    {
+      "title": "Google is pitching an AI agent ecosystem to consumers who may not buy it",
+      "link": "https://techcrunch.com/2026/05/21/google-is-pitching-an-ai-agent-ecosystem-to-consumers-who-may-not-buy-it/",
+      "source": "TechCrunch AI",
+      "region": "Global",
+      "publishedAt": "2026-05-21T13:52:23.000Z",
+      "summary": "One of the most promising introductions at Google’s I/O developer conference on Tuesday was a new way for consumers to use the web: AI agents. Unfortunately, it was also the most confusing.",
+      "tags": [
+        "startup",
+        "product",
+        "global"
+      ]
+    },
+    {
+      "title": "We’re announcing new community investments in Missouri.",
+      "link": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/missouri-programs/",
+      "source": "Google AI Blog",
+      "region": "Global",
+      "publishedAt": "2026-05-20T20:40:00.000Z",
+      "summary": "We’re helping build the state’s next-generation workforce and investing in energy programs.",
+      "tags": [
+        "big-tech",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "100 things we announced at I/O 2026",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/",
+      "source": "Google AI Blog",
+      "region": "Global",
+      "publishedAt": "2026-05-20T19:30:00.000Z",
+      "summary": "This year at Google I/O 2026, we announced Gemini Omni, Google Antigravity, Universal Cart and so much more. Here are the highlights.",
+      "tags": [
+        "big-tech",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "A new experiment brings better group meetings to Google Beam",
+      "link": "https://blog.google/innovation-and-ai/models-and-research/google-research/google-beam-group-meetings/",
+      "source": "Google AI Blog",
+      "region": "Global",
+      "publishedAt": "2026-05-20T16:45:00.000Z",
+      "summary": "See and hear your colleagues in true-to-life size and sound, making hybrid meetings feel more inclusive and connected.",
+      "tags": [
+        "big-tech",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "Roundtables: Inside the Musk v. Altman Trial",
+      "link": "https://www.technologyreview.com/2026/05/19/1137454/roundtables-inside-the-musk-v-altman-trial/",
+      "source": "MIT Technology Review AI",
+      "region": "Global",
+      "publishedAt": "2026-05-19T20:15:18.000Z",
+      "summary": "Listen to the session or watch below Elon Musk lost his suit against OpenAI, in which he alleged CEO Sam Altman and President Greg Brockman had deceived him over the company’s non-profit status. Watch as AI reporter and ",
+      "tags": [
+        "research",
+        "policy",
+        "global"
+      ]
+    },
+    {
+      "title": "OlmoEarth v1.1: A more efficient family of Earth observation models",
+      "link": "https://huggingface.co/blog/allenai/olmoearth-v1-1",
+      "source": "Hugging Face Blog",
+      "region": "Global",
+      "publishedAt": "2026-05-19T18:38:09.000Z",
+      "summary": "",
+      "tags": [
+        "open-source",
+        "models",
+        "developer"
+      ]
+    },
+    {
+      "title": "Google just redesigned the search box for the first time in 25 years — here’s why it matters more than you think.",
+      "link": "https://venturebeat.com/technology/google-just-redesigned-the-search-box-for-the-first-time-in-25-years-heres-why-it-matters-more-than-you-think",
+      "source": "VentureBeat AI",
+      "region": "Global",
+      "publishedAt": "2026-05-19T17:45:00.000Z",
+      "summary": "For a quarter century, the Google search box has been one of the most recognizable interfaces in computing: a thin white rectangle, a blinking cursor, a few typed words, and a list of blue links. On Tuesday, Google will ",
+      "tags": [
+        "enterprise",
+        "startup",
+        "global"
+      ]
+    },
+    {
+      "title": "I/O 2026",
+      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-collection/",
+      "source": "Google AI Blog",
+      "region": "Global",
+      "publishedAt": "2026-05-19T17:45:00.000Z",
+      "summary": "At Google I/O 2026, we shared how we’re making AI more helpful for everyone. See everything we announced.",
+      "tags": [
+        "big-tech",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "How AI Mode is changing the way people search in the U.S.",
+      "link": "https://blog.google/products-and-platforms/products/search/ai-mode-us-insights/",
+      "source": "Google AI Blog",
+      "region": "Global",
+      "publishedAt": "2026-05-19T17:45:00.000Z",
+      "summary": "One year after launch, see how AI Mode’s users are shifting from keywords to natural language queries.",
+      "tags": [
+        "big-tech",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "New ways to create and get things done in Google Workspace",
+      "link": "https://blog.google/products-and-platforms/products/workspace/workspace-updates/",
+      "source": "Google AI Blog",
+      "region": "Global",
+      "publishedAt": "2026-05-19T17:45:00.000Z",
+      "summary": "Announcing new voice capabilities in Gmail, Docs and Keep, a new design tool called Google Pics and updates to AI Inbox.",
+      "tags": [
+        "big-tech",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "I/O 2026: Welcome to the agentic Gemini era",
+      "link": "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/",
+      "source": "Google AI Blog",
+      "region": "Global",
+      "publishedAt": "2026-05-19T17:45:00.000Z",
+      "summary": "The latest from Google I/O: See how we’re helping you get more done with Gemini.",
+      "tags": [
+        "big-tech",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "Gemini 3.5: frontier intelligence with action",
+      "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
+      "source": "Google AI Blog",
+      "region": "Global",
+      "publishedAt": "2026-05-19T17:45:00.000Z",
+      "summary": "At Google I/O we released Gemini 3.5, our latest series of models combining frontier intelligence with action.",
+      "tags": [
+        "big-tech",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "A new era for AI Search",
+      "link": "https://blog.google/products-and-platforms/products/search/search-io-2026/",
+      "source": "Google AI Blog",
+      "region": "Global",
+      "publishedAt": "2026-05-19T17:45:00.000Z",
+      "summary": "We shared the next step in our journey to bring together the best of a search engine with the best of AI.",
+      "tags": [
+        "big-tech",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "Everything new in our Google AI subscriptions, fresh from I/O 2026",
+      "link": "https://blog.google/products-and-platforms/products/google-one/google-ai-subscriptions/",
+      "source": "Google AI Blog",
+      "region": "Global",
+      "publishedAt": "2026-05-19T17:45:00.000Z",
+      "summary": "Introducing a $100 AI Ultra plan — plus, new features and benefits for Google AI Plus, Pro and Ultra subscribers.",
+      "tags": [
+        "big-tech",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "Here’s why Elon Musk lost his suit against OpenAI",
+      "link": "https://www.technologyreview.com/2026/05/18/1137488/elon-musk-suit-openai-verdict/",
+      "source": "MIT Technology Review AI",
+      "region": "Global",
+      "publishedAt": "2026-05-19T00:53:10.000Z",
+      "summary": "On Monday, the jury in Musk v. Altman dealt Elon Musk a major blow—reaching a unanimous advisory verdict that he had sued OpenAI too late and, as a result, his claims are barred by the applicable statutes of limitations.",
+      "tags": [
+        "research",
+        "policy",
+        "global"
+      ]
+    },
+    {
+      "title": "Introducing the Ettin Reranker Family",
+      "link": "https://huggingface.co/blog/ettin-reranker",
+      "source": "Hugging Face Blog",
+      "region": "Global",
+      "publishedAt": "2026-05-19T00:00:00.000Z",
+      "summary": "",
+      "tags": [
+        "open-source",
+        "models",
+        "developer"
+      ]
+    },
+    {
+      "title": "What to expect from Google this week",
+      "link": "https://www.technologyreview.com/2026/05/18/1137439/what-to-expect-from-google-this-week/",
+      "source": "MIT Technology Review AI",
+      "region": "Global",
+      "publishedAt": "2026-05-18T17:35:43.000Z",
+      "summary": "This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first,&#160;sign up here. When Google opens its doors tomorrow for its annual developer conference, I/O",
+      "tags": [
+        "research",
+        "policy",
+        "global"
+      ]
+    },
+    {
+      "title": "Inside Anduril and Meta’s quest to make smart glasses for warfare",
+      "link": "https://www.technologyreview.com/2026/05/18/1137412/inside-anduril-and-metas-quest-to-make-smart-glasses-for-warfare/",
+      "source": "MIT Technology Review AI",
+      "region": "Global",
+      "publishedAt": "2026-05-18T16:01:39.000Z",
+      "summary": "The defense-tech company Anduril has shared new details about the augmented-reality headset for the military it’s prototyping with Meta, including a vision for ordering drone strikes via eye-tracking and voice commands. ",
+      "tags": [
+        "research",
+        "policy",
+        "global"
+      ]
+    },
+    {
+      "title": "PaddleOCR 3.5: Running OCR and Document Parsing Tasks with a Transformers Backend",
+      "link": "https://huggingface.co/blog/PaddlePaddle/paddleocr-transformers",
+      "source": "Hugging Face Blog",
+      "region": "Global",
+      "publishedAt": "2026-05-18T15:12:46.000Z",
+      "summary": "",
+      "tags": [
+        "open-source",
+        "models",
+        "developer"
+      ]
+    },
+    {
+      "title": "The Open Agent Leaderboard",
+      "link": "https://huggingface.co/blog/ibm-research/open-agent-leaderboard",
+      "source": "Hugging Face Blog",
+      "region": "Global",
+      "publishedAt": "2026-05-18T14:12:58.000Z",
+      "summary": "",
+      "tags": [
+        "open-source",
+        "models",
+        "developer"
+      ]
+    },
+    {
+      "title": "Musk v. Altman week 3: Elon Musk and Sam Altman traded blows over each other’s credibility. Now the jury will pick a side.",
+      "link": "https://www.technologyreview.com/2026/05/15/1137357/musk-v-altman-week-3/",
+      "source": "MIT Technology Review AI",
+      "region": "Global",
+      "publishedAt": "2026-05-15T23:39:35.000Z",
+      "summary": "Update: On Monday May 18, the jury sided with OpenAI, delivering an advisory verdict finding that Musk&#8217;s claims are barred by the statute of limitations. US District Judge Yvonne Gonzalez Rogers accepted the verdic",
+      "tags": [
+        "research",
+        "policy",
+        "global"
+      ]
+    },
+    {
+      "title": "How Chinese short dramas became AI content machines",
+      "link": "https://www.technologyreview.com/2026/05/15/1137326/chinese-short-dramas-ai/",
+      "source": "MIT Technology Review AI",
+      "region": "Global",
+      "publishedAt": "2026-05-15T09:00:00.000Z",
+      "summary": "In a dimly lit bedroom, a frightened young woman is thrown onto a bed by a tall, muscular man. He grabs her hand, and flame-like vines crawl across her body, fusing with her flesh. She levitates, then drops. A dragon-sha",
+      "tags": [
+        "research",
+        "policy",
+        "global"
+      ]
+    },
+    {
+      "title": "Granite Embedding Multilingual R2: Open Apache 2.0 Multilingual Embeddings with 32K Context — Best Sub-100M Retrieval Quality",
+      "link": "https://huggingface.co/blog/ibm-granite/granite-embedding-multilingual-r2",
+      "source": "Hugging Face Blog",
+      "region": "Global",
+      "publishedAt": "2026-05-14T18:55:01.000Z",
+      "summary": "",
+      "tags": [
+        "open-source",
+        "models",
+        "developer"
+      ]
+    },
+    {
+      "title": "Unlocking asynchronicity in continuous batching",
+      "link": "https://huggingface.co/blog/continuous_async",
+      "source": "Hugging Face Blog",
+      "region": "Global",
+      "publishedAt": "2026-05-14T00:00:00.000Z",
+      "summary": "",
+      "tags": [
+        "open-source",
+        "models",
+        "developer"
+      ]
+    },
+    {
+      "title": "Building Blocks for Foundation Model Training and Inference on AWS",
+      "link": "https://huggingface.co/blog/amazon/foundation-model-building-blocks",
+      "source": "Hugging Face Blog",
+      "region": "Global",
+      "publishedAt": "2026-05-11T23:18:26.000Z",
+      "summary": "",
+      "tags": [
+        "open-source",
+        "models",
+        "developer"
+      ]
+    },
+    {
+      "title": "The new AI-powered Google Finance is expanding to Europe.",
+      "link": "https://blog.google/products-and-platforms/products/search/ai-powered-google-finance-in-europe/",
+      "source": "Google AI Blog",
+      "region": "Global",
+      "publishedAt": "2026-05-11T06:00:00.000Z",
+      "summary": "This week, the new, AI-powered Google Finance is launching across Europe, with full local language support. This reimagined experience offers a suite of powerful capabil…",
+      "tags": [
+        "big-tech",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "See what happens when creative legends use AI to make ads for small businesses.",
+      "link": "https://blog.google/company-news/inside-google/company-announcements/the-small-brief/",
+      "source": "Google AI Blog",
+      "region": "Global",
+      "publishedAt": "2026-05-08T15:00:00.000Z",
+      "summary": "Today we're launching The Small Brief, an initiative bringing together three ad industry icons to champion a local businesses they love. Their mission is to build breakt…",
+      "tags": [
+        "big-tech",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "vLLM V0 to V1: Correctness Before Corrections in RL",
+      "link": "https://huggingface.co/blog/ServiceNow-AI/correctness-before-corrections",
+      "source": "Hugging Face Blog",
+      "region": "Global",
+      "publishedAt": "2026-05-06T19:06:55.000Z",
+      "summary": "",
+      "tags": [
+        "open-source",
+        "models",
+        "developer"
+      ]
+    },
+    {
+      "title": "5 gardening tips you can try right in Search",
+      "link": "https://blog.google/products-and-platforms/products/search/gardening-tips/",
+      "source": "Google AI Blog",
+      "region": "Global",
+      "publishedAt": "2026-05-06T16:00:00.000Z",
+      "summary": "We’ve rounded up the top ways you can use Google’s AI Mode, Search Live and Shopping to help your plants thrive.",
+      "tags": [
+        "big-tech",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "Adding Benchmaxxer Repellant to the Open ASR Leaderboard",
+      "link": "https://huggingface.co/blog/open-asr-leaderboard-private-data",
+      "source": "Hugging Face Blog",
+      "region": "Global",
+      "publishedAt": "2026-05-06T00:00:00.000Z",
+      "summary": "",
+      "tags": [
+        "open-source",
+        "models",
+        "developer"
+      ]
+    },
+    {
+      "title": "Google is partnering with XPRIZE and Range Media Partners on the $3.5 million Future Vision film competition.",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/future-vision-film-competition-xprize/",
+      "source": "Google AI Blog",
+      "region": "Global",
+      "publishedAt": "2026-05-05T16:00:00.000Z",
+      "summary": "Google is partnering with XPRIZE and Range Media Partners on the $3.5 million Future Vision film competition.",
+      "tags": [
+        "big-tech",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "The latest AI news we announced in April 2026",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-april-2026/",
+      "source": "Google AI Blog",
+      "region": "Global",
+      "publishedAt": "2026-05-04T17:00:00.000Z",
+      "summary": "Here are Google’s latest AI updates from April 2026",
+      "tags": [
+        "big-tech",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "Reduce friction and latency for long-running jobs with Webhooks in Gemini API",
+      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/event-driven-webhooks/",
+      "source": "Google AI Blog",
+      "region": "Global",
+      "publishedAt": "2026-05-04T15:30:00.000Z",
+      "summary": "Event-Driven Webhooks are a push-based notification system that eliminates the need for inefficient polling.",
+      "tags": [
+        "big-tech",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "Granite 4.1 LLMs: How They’re Built",
+      "link": "https://huggingface.co/blog/ibm-granite/granite-4-1",
+      "source": "Hugging Face Blog",
+      "region": "Global",
+      "publishedAt": "2026-04-29T15:01:48.000Z",
+      "summary": "",
+      "tags": [
+        "open-source",
+        "models",
+        "developer"
+      ]
+    },
+    {
+      "title": "DeepInfra on Hugging Face Inference Providers 🔥",
+      "link": "https://huggingface.co/blog/inference-providers-deepinfra",
+      "source": "Hugging Face Blog",
+      "region": "Global",
+      "publishedAt": "2026-04-29T00:00:00.000Z",
+      "summary": "",
+      "tags": [
+        "open-source",
+        "models",
+        "developer"
+      ]
+    },
+    {
+      "title": "Celebrating 20 years of Google Translate: Fun facts, tips and new features to try",
+      "link": "https://blog.google/products-and-platforms/products/translate/fun-facts-google-translate-20-years/",
+      "source": "Google AI Blog",
+      "region": "Global",
+      "publishedAt": "2026-04-28T16:00:00.000Z",
+      "summary": "Google’s sharing 20 fun facts to celebrate Google Translate turning 20, from its roots as a 2006 AI experiment to supporting almost 250 languages today.",
+      "tags": [
+        "big-tech",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "Introducing NVIDIA Nemotron 3 Nano Omni: Long-Context Multimodal Intelligence for Documents, Audio and Video Agents",
+      "link": "https://huggingface.co/blog/nvidia/nemotron-3-nano-omni-multimodal-intelligence",
+      "source": "Hugging Face Blog",
+      "region": "Global",
+      "publishedAt": "2026-04-28T15:58:57.000Z",
+      "summary": "",
+      "tags": [
+        "open-source",
+        "models",
+        "developer"
+      ]
+    },
+    {
+      "title": "Join the new AI Agents Vibe Coding Course from Google and Kaggle",
+      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/kaggle-genai-intensive-course-vibe-coding-june-2026/",
+      "source": "Google AI Blog",
+      "region": "Global",
+      "publishedAt": "2026-04-27T13:00:00.000Z",
+      "summary": "Google is bringing back its 5-Day AI Agents Intensive Course with Kaggle and registration is open.",
+      "tags": [
+        "big-tech",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "How to build scalable web apps with OpenAI's Privacy Filter",
+      "link": "https://huggingface.co/blog/openai-privacy-filter-web-apps",
+      "source": "Hugging Face Blog",
+      "region": "Global",
+      "publishedAt": "2026-04-27T00:00:00.000Z",
+      "summary": "",
+      "tags": [
+        "open-source",
+        "models",
+        "developer"
+      ]
+    },
+    {
+      "title": "8 Gemini tips for organizing your space (and life)",
+      "link": "https://blog.google/products-and-platforms/products/gemini/gemini-spring-cleaning-tips/",
+      "source": "Google AI Blog",
+      "region": "Global",
+      "publishedAt": "2026-04-24T19:00:00.000Z",
+      "summary": "Organize your home and digital space with Gemini. Use AI-powered tips for cleaning schedules, inbox decluttering, seasonal chores.",
+      "tags": [
+        "big-tech",
+        "models",
+        "global"
+      ]
+    },
+    {
+      "title": "DeepSeek-V4: a million-token context that agents can actually use",
+      "link": "https://huggingface.co/blog/deepseekv4",
+      "source": "Hugging Face Blog",
+      "region": "Global",
+      "publishedAt": "2026-04-24T00:00:00.000Z",
+      "summary": "",
+      "tags": [
+        "open-source",
+        "models",
+        "developer"
+      ]
+    },
+    {
+      "title": "How to Use Transformers.js in a Chrome Extension",
+      "link": "https://huggingface.co/blog/transformersjs-chrome-extension",
+      "source": "Hugging Face Blog",
+      "region": "Global",
+      "publishedAt": "2026-04-23T00:00:00.000Z",
+      "summary": "",
+      "tags": [
+        "open-source",
+        "models",
+        "developer"
+      ]
+    },
+    {
+      "title": "QIMMA قِمّة ⛰: A Quality-First Arabic LLM Leaderboard",
+      "link": "https://huggingface.co/blog/tiiuae/qimma-arabic-leaderboard",
+      "source": "Hugging Face Blog",
+      "region": "Global",
+      "publishedAt": "2026-04-21T10:09:58.000Z",
+      "summary": "",
+      "tags": [
+        "open-source",
+        "models",
+        "developer"
+      ]
+    },
+    {
+      "title": "AI and the Future of Cybersecurity: Why Openness Matters",
+      "link": "https://huggingface.co/blog/cybersecurity-openness",
+      "source": "Hugging Face Blog",
+      "region": "Global",
+      "publishedAt": "2026-04-21T00:00:00.000Z",
+      "summary": "",
+      "tags": [
+        "open-source",
+        "models",
+        "developer"
+      ]
+    }
+  ]
+}

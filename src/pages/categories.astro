@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const allProducts = await getCollection('products');
+const sorted = allProducts.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
+
+const CATEGORIES = [
+  { cat: 'chat', icon: '💬', label: '对话大模型', desc: '日常助理、文案创作、基础逻辑推理的基石' },
+  { cat: 'ide', icon: '💻', label: '代码辅助与 IDE', desc: '程序员的"外脑"，大幅提升编码效率与重构速度' },
+  { cat: 'ui', icon: '🎨', label: 'UI 与前端工程', desc: '缩短"设计稿/灵感到上线"的路径' },
+  { cat: 'agent', icon: '⚙️', label: '智能体与工具编排', desc: '将大模型能力组装拼接，实现流程高度自动化' },
+  { cat: 'media', icon: '🖼️', label: '图片与视频生成', desc: 'AI 创意内容生成的核心引擎' },
+  { cat: 'search', icon: '🔍', label: '搜索与知识管理', desc: 'AI 增强的信息获取与知识沉淀' },
+  { cat: 'data', icon: '📊', label: '数据分析与可视化', desc: 'AI 驱动的数据处理与洞察' },
+  { cat: 'audio', icon: '🎵', label: '语音与音乐', desc: 'AI 语音合成与音乐创作' },
+];
+
+const grouped = CATEGORIES.map(c => ({
+  ...c,
+  products: sorted.filter(p => p.data.category === c.cat),
+}));
+---
+
+<Layout title="分类浏览 — AI Toolbox">
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6">
+    <h1 class="mb-2 text-3xl font-extrabold">📂 分类浏览</h1>
+    <p class="mb-10 text-text-secondary">按全栈链路分类，精准定位你需要的 AI 工具</p>
+
+    <div class="space-y-12">
+      {grouped.map(g => (
+        <section>
+          <div class="mb-5 flex items-center gap-3 border-b border-border pb-3">
+            <span class="text-3xl">{g.icon}</span>
+            <div>
+              <h2 class="text-xl font-bold">{g.label}</h2>
+              <p class="text-xs text-text-secondary">{g.desc}</p>
+            </div>
+            <span class="ml-auto rounded-full bg-surface px-3 py-1 text-xs text-text-secondary">
+              {g.products.length} 款产品
+            </span>
+          </div>
+          <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {g.products.map(p => (
+              <a
+                href={`/products/${p.id}`}
+                class="group rounded-xl border border-border bg-surface p-4 transition hover:border-accent hover:bg-surface-hover"
+              >
+                <div class="mb-1 flex items-center gap-2">
+                  <span class="font-bold group-hover:text-accent-light transition-colors">{p.data.name}</span>
+                  <span class="ml-auto text-xs text-text-secondary">{p.data.vendor}</span>
+                </div>
+                <div class="mt-2 text-xs text-green">✅ {p.data.pros[0]}</div>
+                <div class="mt-1 text-xs text-red">⚠️ {p.data.cons[0]}</div>
+              </a>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </div>
+</Layout>

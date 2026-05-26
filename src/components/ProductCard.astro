@@ -1,0 +1,83 @@
+---
+interface Props {
+  name: string;
+  vendor: string;
+  category: string;
+  categoryLabel: string;
+  pros: string[];
+  cons: string[];
+  pricing?: string;
+  website?: string;
+  slug: string;
+}
+
+const { name, vendor, category, categoryLabel, pros, cons, pricing, website, slug } = Astro.props;
+
+const pricingMap: Record<string, { label: string; color: string }> = {
+  free: { label: '免费', color: 'bg-green-900/40 text-green-400' },
+  freemium: { label: '免费增值', color: 'bg-blue-900/40 text-blue-400' },
+  paid: { label: '付费', color: 'bg-orange-900/40 text-orange-400' },
+  'open-source': { label: '开源', color: 'bg-purple-900/40 text-purple-400' },
+};
+---
+
+<a
+  href={`/products/${slug}`}
+  class="group block rounded-2xl border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:bg-surface-hover hover:shadow-[0_8px_30px_rgba(108,92,231,0.12)]"
+>
+  <!-- Head -->
+  <div class="mb-4 flex items-center gap-3">
+    <h3 class="text-lg font-bold group-hover:text-accent-light transition-colors">{name}</h3>
+    <span class="ml-auto whitespace-nowrap rounded-full bg-accent/10 px-3 py-0.5 text-xs text-accent-light">
+      {vendor}
+    </span>
+  </div>
+
+  <!-- Tags -->
+  <div class="mb-4 flex flex-wrap gap-2">
+    <span class="rounded-full bg-surface-hover px-2.5 py-0.5 text-xs text-text-secondary">
+      {categoryLabel}
+    </span>
+    {pricing && pricingMap[pricing] && (
+      <span class={`rounded-full px-2.5 py-0.5 text-xs ${pricingMap[pricing].color}`}>
+        {pricingMap[pricing].label}
+      </span>
+    )}
+  </div>
+
+  <!-- Pros -->
+  <div class="mb-3">
+    <div class="mb-1.5 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-green">
+      ✅ 擅长
+    </div>
+    <ul class="space-y-1">
+      {pros.slice(0, 2).map((p: string) => (
+        <li class="relative pl-4 text-xs leading-relaxed text-text-secondary">
+          <span class="absolute left-0 top-[7px] h-1.5 w-1.5 rounded-full bg-green" />
+          {p}
+        </li>
+      ))}
+      {pros.length > 2 && (
+        <li class="pl-4 text-xs text-text-secondary/60">+{pros.length - 2} 更多</li>
+      )}
+    </ul>
+  </div>
+
+  <!-- Cons -->
+  <div>
+    <div class="mb-1.5 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-red">
+      ⚠️ 不擅长
+    </div>
+    <ul class="space-y-1">
+      {cons.slice(0, 1).map((c: string) => (
+        <li class="relative pl-4 text-xs leading-relaxed text-text-secondary">
+          <span class="absolute left-0 top-[7px] h-1.5 w-1.5 rounded-full bg-red" />
+          {c}
+        </li>
+      ))}
+      {cons.length > 1 && (
+        <li class="pl-4 text-xs text-text-secondary/60">+{cons.length - 1} 更多</li>
+      )}
+    </ul>
+  </div>
+</a>

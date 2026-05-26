@@ -1,0 +1,207 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import FilterTag from '../components/FilterTag.astro';
+import { getCollection } from 'astro:content';
+
+const allProducts = await getCollection('products');
+const sorted = allProducts.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
+
+const CATEGORIES = [
+  { cat: 'all', icon: '🌐', label: '全部' },
+  { cat: 'chat', icon: '💬', label: '对话大模型' },
+  { cat: 'ide', icon: '💻', label: '代码IDE' },
+  { cat: 'ui', icon: '🎨', label: 'UI前端' },
+  { cat: 'agent', icon: '⚙️', label: 'Agent编排' },
+  { cat: 'media', icon: '🖼️', label: '图片视频' },
+  { cat: 'search', icon: '🔍', label: '搜索知识' },
+  { cat: 'data', icon: '📊', label: '数据分析' },
+  { cat: 'audio', icon: '🎵', label: '音频音乐' },
+];
+
+const CATEGORY_LABELS: Record<string, string> = {
+  chat: '对话大模型',
+  ide: '代码IDE',
+  ui: 'UI前端',
+  agent: 'Agent编排',
+  media: '图片视频',
+  search: '搜索知识',
+  data: '数据分析',
+  audio: '音频音乐',
+};
+
+const catCounts: Record<string, number> = {};
+for (const p of sorted) {
+  catCounts[p.data.category] = (catCounts[p.data.category] || 0) + 1;
+}
+---
+
+<Layout>
+  <!-- Hero -->
+  <section class="relative overflow-hidden border-b border-border">
+    <div class="absolute inset-0 bg-gradient-to-br from-bg via-[#2d1b69]/20 to-bg" />
+    <div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
+      <div class="mx-auto max-w-2xl text-center">
+        <h1 class="mb-4 text-4xl font-extrabold tracking-tight sm:text-5xl">
+          <span class="bg-gradient-to-r from-accent-light via-[#74b9ff] to-[#81ecec] bg-clip-text text-transparent">
+            全栈链路 AI 产品导航
+          </span>
+        </h1>
+        <p class="mb-8 text-lg text-text-secondary">
+          聚焦互联网全栈开发链路，持续追踪最新最具影响力的 AI 产品<br />
+          梳理各产品的核心优势与局限性，助你精准选型
+        </p>
+        <!-- Search -->
+        <div class="relative mx-auto max-w-lg">
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="搜索产品名称、厂商或特点..."
+            class="w-full rounded-xl border border-border bg-surface py-3 pl-12 pr-4 text-sm text-text outline-none transition placeholder:text-text-secondary/60 focus:border-accent"
+          />
+          <span class="absolute left-4 top-1/2 -translate-y-1/2 text-lg">🔍</span>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="mx-auto mt-10 flex max-w-2xl justify-center gap-4 sm:gap-6">
+        <div class="rounded-xl border border-border bg-surface px-5 py-3 text-center">
+          <div class="text-2xl font-extrabold bg-gradient-to-r from-accent-light to-[#74b9ff] bg-clip-text text-transparent">
+            {sorted.length}
+          </div>
+          <div class="text-xs text-text-secondary">收录产品</div>
+        </div>
+        <div class="rounded-xl border border-border bg-surface px-5 py-3 text-center">
+          <div class="text-2xl font-extrabold bg-gradient-to-r from-accent-light to-[#74b9ff] bg-clip-text text-transparent">
+            {CATEGORIES.length - 1}
+          </div>
+          <div class="text-xs text-text-secondary">分类数量</div>
+        </div>
+        <div class="rounded-xl border border-border bg-surface px-5 py-3 text-center">
+          <div class="text-2xl font-extrabold bg-gradient-to-r from-accent-light to-[#74b9ff] bg-clip-text text-transparent">
+            2026
+          </div>
+          <div class="text-xs text-text-secondary">数据年份</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filters -->
+  <section class="border-b border-border bg-bg/80 backdrop-blur-sm">
+    <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6">
+      <div class="flex flex-wrap gap-2" id="filterBar">
+        {CATEGORIES.map((c) => (
+          <FilterTag
+            icon={c.icon}
+            label={c.label}
+            cat={c.cat}
+            active={c.cat === 'all'}
+            count={c.cat === 'all' ? sorted.length : catCounts[c.cat]}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Grid -->
+  <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+    <div
+      id="productGrid"
+      class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+      data-products={JSON.stringify(sorted.map(p => ({
+        slug: p.id,
+        name: p.data.name,
+        vendor: p.data.vendor,
+        category: p.data.category,
+        categoryLabel: CATEGORY_LABELS[p.data.category] || p.data.category,
+        pros: p.data.pros,
+        cons: p.data.cons,
+        pricing: p.data.pricing,
+        website: p.data.website,
+      })))}
+    >
+      {sorted.map((p) => (
+        <ProductCard
+          slug={p.id}
+          name={p.data.name}
+          vendor={p.data.vendor}
+          category={p.data.category}
+          categoryLabel={CATEGORY_LABELS[p.data.category] || p.data.category}
+          pros={p.data.pros}
+          cons={p.data.cons}
+          pricing={p.data.pricing}
+          website={p.data.website}
+        />
+      ))}
+    </div>
+
+    <!-- Empty state -->
+    <div id="emptyState" class="hidden py-20 text-center">
+      <div class="mb-4 text-5xl">🔍</div>
+      <p class="text-text-secondary">没有找到匹配的产品，试试其他关键词</p>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const products = JSON.parse(
+    (document.getElementById('productGrid') as HTMLElement).dataset.products || '[]'
+  );
+  const grid = document.getElementById('productGrid')!;
+  const emptyState = document.getElementById('emptyState')!;
+  const searchInput = document.getElementById('searchInput') as HTMLInputElement;
+  const filterBar = document.getElementById('filterBar')!;
+
+  let currentCat = 'all';
+
+  function render(query: string, cat: string) {
+    const q = query.toLowerCase().trim();
+    const filtered = products.filter(
+      (p: any) =>
+        (cat === 'all' || p.category === cat) &&
+        (!q ||
+          p.name.toLowerCase().includes(q) ||
+          p.vendor.toLowerCase().includes(q) ||
+          p.pros.join(' ').toLowerCase().includes(q) ||
+          p.cons.join(' ').toLowerCase().includes(q))
+    );
+
+    // Toggle visibility of cards
+    const cards = grid.querySelectorAll('a');
+    cards.forEach((card, i) => {
+      const p = products[i];
+      const match =
+        (cat === 'all' || p.category === cat) &&
+        (!q ||
+          p.name.toLowerCase().includes(q) ||
+          p.vendor.toLowerCase().includes(q) ||
+          p.pros.join(' ').toLowerCase().includes(q) ||
+          p.cons.join(' ').toLowerCase().includes(q));
+      (card as HTMLElement).style.display = match ? '' : 'none';
+    });
+
+    const visibleCount = Array.from(cards).filter(
+      (c) => (c as HTMLElement).style.display !== 'none'
+    ).length;
+    emptyState.classList.toggle('hidden', visibleCount > 0);
+    grid.classList.toggle('hidden', visibleCount === 0);
+  }
+
+  searchInput.addEventListener('input', () => render(searchInput.value, currentCat));
+
+  filterBar.addEventListener('click', (e) => {
+    const tag = (e.target as HTMLElement).closest('[data-cat]');
+    if (!tag) return;
+    currentCat = (tag as HTMLElement).dataset.cat!;
+    filterBar.querySelectorAll('[data-cat]').forEach((t) => {
+      t.classList.toggle('border-accent', t === tag);
+      t.classList.toggle('bg-accent', t === tag);
+      t.classList.toggle('text-white', t === tag);
+      t.classList.toggle('border-border', t !== tag);
+      t.classList.toggle('bg-surface', t !== tag);
+      t.classList.toggle('text-text-secondary', t !== tag);
+    });
+    render(searchInput.value, currentCat);
+  });
+</script>

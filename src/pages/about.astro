@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="关于 — AI Toolbox">
+  <div class="mx-auto max-w-3xl px-4 py-12 sm:px-6">
+    <h1 class="mb-6 text-3xl font-extrabold">👋 关于 AI Toolbox</h1>
+
+    <div class="space-y-6 text-text-secondary leading-relaxed">
+      <p>
+        <strong class="text-text">AI Toolbox</strong> 是一个聚焦互联网全栈开发链路的 AI 产品导航站。
+        我们持续追踪市场上最新最具影响力的 AI 产品，梳理各产品的核心优势与局限性，帮助开发者与产品经理精准选型。
+      </p>
+
+      <div class="rounded-2xl border border-border bg-surface p-6">
+        <h2 class="mb-3 text-lg font-bold text-text">🎯 我们的使命</h2>
+        <ul class="space-y-2">
+          <li class="relative pl-5">
+            <span class="absolute left-0 top-[7px] h-2 w-2 rounded-full bg-accent" />
+            <strong class="text-text">精准分类</strong> — 按全栈链路（对话/IDE/UI/Agent/媒体/搜索/数据/音频）分类，一目了然
+          </li>
+          <li class="relative pl-5">
+            <span class="absolute left-0 top-[7px] h-2 w-2 rounded-full bg-accent" />
+            <strong class="text-text">客观评测</strong> — 每个产品标注擅长与不擅长，不吹不黑
+          </li>
+          <li class="relative pl-5">
+            <span class="absolute left-0 top-[7px] h-2 w-2 rounded-full bg-accent" />
+            <strong class="text-text">持续更新</strong> — 跟进 AI 行业最新动态，每月更新
+          </li>
+          <li class="relative pl-5">
+            <span class="absolute left-0 top-[7px] h-2 w-2 rounded-full bg-accent" />
+            <strong class="text-text">开源共建</strong> — 内容以 MDX 格式存储，欢迎 PR 贡献
+          </li>
+        </ul>
+      </div>
+
+      <div class="rounded-2xl border border-border bg-surface p-6">
+        <h2 class="mb-3 text-lg font-bold text-text">🛠 技术栈</h2>
+        <div class="flex flex-wrap gap-2">
+          <span class="rounded-full bg-accent/10 px-3 py-1 text-xs text-accent-light">Astro</span>
+          <span class="rounded-full bg-accent/10 px-3 py-1 text-xs text-accent-light">MDX</span>
+          <span class="rounded-full bg-accent/10 px-3 py-1 text-xs text-accent-light">Tailwind CSS v4</span>
+          <span class="rounded-full bg-accent/10 px-3 py-1 text-xs text-accent-light">Vercel</span>
+        </div>
+      </div>
+
+      <div class="rounded-2xl border border-border bg-surface p-6">
+        <h2 class="mb-3 text-lg font-bold text-text">✏️ 如何贡献</h2>
+        <ol class="space-y-2 pl-4">
+          <li>1. Fork 仓库</li>
+          <li>2. 在 <code class="rounded bg-surface-hover px-1.5 py-0.5 text-xs">src/content/products/</code> 目录下添加新的 MDX 文件</li>
+          <li>3. 按照 frontmatter 规范填写产品信息</li>
+          <li>4. 提交 Pull Request</li>
+        </ol>
+      </div>
+
+      <p class="text-center text-sm">
+        Built with ❤️ by the AI Toolbox team · 2026
+      </p>
+    </div>
+  </div>
+</Layout>

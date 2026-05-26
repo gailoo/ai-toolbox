@@ -1,0 +1,60 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'AI Toolbox — 全栈链路 AI 产品导航',
+  description = '聚焦互联网全栈开发链路，持续追踪市场上最新最具影响力的 AI 产品，梳理各产品的核心优势与局限性',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen antialiased">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 border-b border-border bg-bg/80 backdrop-blur-xl">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
+        <a href="/" class="flex items-center gap-2 text-lg font-bold">
+          <span class="text-2xl">🧠</span>
+          <span class="bg-gradient-to-r from-accent-light to-[#74b9ff] bg-clip-text text-transparent">
+            AI Toolbox
+          </span>
+        </a>
+        <div class="flex items-center gap-4 text-sm text-text-secondary">
+          <a href="/" class="transition hover:text-text">首页</a>
+          <a href="/categories" class="transition hover:text-text">分类</a>
+          <a href="/news" class="transition hover:text-text">AI资讯</a>
+          <a href="/learn" class="transition hover:text-text">AI知识</a>
+          <a href="/about" class="transition hover:text-text">关于</a>
+          <a
+            href="https://github.com"
+            target="_blank"
+            class="rounded-lg bg-surface px-3 py-1.5 transition hover:bg-surface-hover"
+          >
+            ⭐ Star
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <slot />
+
+    <!-- Footer -->
+    <footer class="border-t border-border py-8 text-center text-sm text-text-secondary">
+      <p>AI Toolbox — 全栈链路 AI 产品导航 · 持续更新中</p>
+      <p class="mt-1">© 2026 AI Toolbox. Built with Astro + Tailwind CSS.</p>
+    </footer>
+  </body>
+</html>

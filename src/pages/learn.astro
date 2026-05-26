@@ -1,0 +1,156 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const articles = (await getCollection('learn')).sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
+
+const CATEGORY_INFO: Record<string, { icon: string; label: string; desc: string }> = {
+  foundation: { icon: '🧠', label: '基础概念', desc: 'AI、机器学习、大语言模型等入门概念' },
+  prompt: { icon: '✍️', label: 'Prompt', desc: '如何更清楚地向 AI 提问与协作' },
+  rag: { icon: '📚', label: 'RAG知识库', desc: '让 AI 基于资料和知识库回答' },
+  agent: { icon: '🤖', label: 'Agent', desc: '从聊天机器人到可执行工作流' },
+  multimodal: { icon: '🖼️', label: '多模态', desc: '文本、图片、音频、视频协同' },
+  tools: { icon: '🧰', label: '工具选型', desc: '如何选择合适的 AI 产品和系统' },
+  safety: { icon: '🛡️', label: '安全评估', desc: '可靠性、权限、隐私和人工审核' },
+};
+
+const levelMap: Record<string, { label: string; color: string }> = {
+  beginner: { label: '入门', color: 'bg-green-900/40 text-green-400' },
+  intermediate: { label: '进阶', color: 'bg-blue-900/40 text-blue-400' },
+  advanced: { label: '高级', color: 'bg-purple-900/40 text-purple-400' },
+};
+
+const grouped = Object.entries(CATEGORY_INFO)
+  .map(([key, info]) => ({ key, ...info, articles: articles.filter((article) => article.data.category === key) }))
+  .filter((group) => group.articles.length > 0);
+---
+
+<Layout title="AI知识 — AI Toolbox" description="AI 入门知识、Prompt、RAG、Agent、多模态和工具选型学习文档。">
+  <main class="mx-auto max-w-7xl px-4 py-12 sm:px-6">
+    <!-- Hero -->
+    <section class="mb-10 rounded-3xl border border-border bg-gradient-to-br from-surface via-[#1e2240] to-surface p-8">
+      <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <div>
+          <div class="mb-3 inline-flex rounded-full bg-accent/15 px-3 py-1 text-xs text-accent-light">
+            📖 AI Learning Path · 从入门到实践
+          </div>
+          <h1 class="mb-3 text-3xl font-extrabold sm:text-4xl">AI知识</h1>
+          <p class="max-w-2xl text-text-secondary">
+            面向非算法背景的产品经理、开发者和运营同学，整理 AI 入门知识、Prompt、RAG、Agent、多模态、工具选型和安全评估。
+          </p>
+        </div>
+        <div class="grid grid-cols-3 gap-3 text-center">
+          <div class="rounded-xl border border-border bg-bg/40 px-4 py-3">
+            <div class="text-2xl font-extrabold text-accent-light">{articles.length}</div>
+            <div class="text-xs text-text-secondary">学习文档</div>
+          </div>
+          <div class="rounded-xl border border-border bg-bg/40 px-4 py-3">
+            <div class="text-2xl font-extrabold text-accent-light">{grouped.length}</div>
+            <div class="text-xs text-text-secondary">知识模块</div>
+          </div>
+          <div class="rounded-xl border border-border bg-bg/40 px-4 py-3">
+            <div class="text-2xl font-extrabold text-accent-light">Beginner</div>
+            <div class="text-xs text-text-secondary">友好入门</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning path -->
+    <section class="mb-12 rounded-2xl border border-border bg-surface p-6">
+      <h2 class="mb-4 text-xl font-bold">推荐学习路径</h2>
+      <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        {articles.slice(0, 8).map((article, index) => (
+          <a href={`/learn/${article.id}`} class="group rounded-xl border border-border bg-bg/40 p-4 transition hover:border-accent hover:bg-surface-hover">
+            <div class="mb-2 text-xs text-text-secondary">Step {index + 1}</div>
+            <div class="font-bold group-hover:text-accent-light">{article.data.title}</div>
+            <div class="mt-2 text-xs text-text-secondary">{article.data.readingTime}</div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Search -->
+    <section class="mb-8">
+      <div class="relative max-w-xl">
+        <input
+          id="learnSearch"
+          type="text"
+          placeholder="搜索知识文档、标签或摘要..."
+          class="w-full rounded-xl border border-border bg-surface py-3 pl-12 pr-4 text-sm text-text outline-none transition placeholder:text-text-secondary/60 focus:border-accent"
+        />
+        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-lg">🔍</span>
+      </div>
+    </section>
+
+    <!-- Grouped articles -->
+    <section id="learnList" class="space-y-12">
+      {grouped.map((group) => (
+        <div class="learn-group" data-group={group.key}>
+          <div class="mb-5 flex items-center gap-3 border-b border-border pb-3">
+            <span class="text-3xl">{group.icon}</span>
+            <div>
+              <h2 class="text-xl font-bold">{group.label}</h2>
+              <p class="text-xs text-text-secondary">{group.desc}</p>
+            </div>
+            <span class="ml-auto rounded-full bg-surface px-3 py-1 text-xs text-text-secondary">
+              {group.articles.length} 篇
+            </span>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {group.articles.map((article) => (
+              <a
+                href={`/learn/${article.id}`}
+                class="learn-card group rounded-2xl border border-border bg-surface p-5 transition hover:-translate-y-0.5 hover:border-accent hover:bg-surface-hover"
+              >
+                <div class="mb-3 flex items-center gap-2">
+                  <span class={`rounded-full px-2.5 py-0.5 text-xs ${levelMap[article.data.level].color}`}>
+                    {levelMap[article.data.level].label}
+                  </span>
+                  <span class="text-xs text-text-secondary">{article.data.readingTime}</span>
+                </div>
+                <h3 class="mb-2 text-lg font-bold group-hover:text-accent-light">{article.data.title}</h3>
+                <p class="mb-4 text-sm leading-relaxed text-text-secondary">{article.data.description}</p>
+                <div class="flex flex-wrap gap-2">
+                  {article.data.tags.map((tag) => (
+                    <span class="rounded-full bg-bg/60 px-2.5 py-0.5 text-xs text-text-secondary">#{tag}</span>
+                  ))}
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </section>
+
+    <div id="emptyLearn" class="hidden py-20 text-center text-text-secondary">
+      <div class="mb-4 text-5xl">📖</div>
+      <p>没有找到匹配的知识文档。</p>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  const input = document.getElementById('learnSearch') as HTMLInputElement;
+  const groups = Array.from(document.querySelectorAll('.learn-group')) as HTMLElement[];
+  const empty = document.getElementById('emptyLearn')!;
+
+  input.addEventListener('input', () => {
+    const q = input.value.toLowerCase().trim();
+    let totalVisible = 0;
+
+    groups.forEach((group) => {
+      let groupVisible = 0;
+      const cards = Array.from(group.querySelectorAll('.learn-card')) as HTMLElement[];
+      cards.forEach((card) => {
+        const hit = !q || (card.textContent || '').toLowerCase().includes(q);
+        card.style.display = hit ? '' : 'none';
+        if (hit) groupVisible += 1;
+      });
+      group.style.display = groupVisible > 0 ? '' : 'none';
+      totalVisible += groupVisible;
+    });
+
+    empty.classList.toggle('hidden', totalVisible > 0);
+  });
+</script>
